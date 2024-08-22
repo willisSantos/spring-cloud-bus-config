@@ -20,6 +20,6 @@ class BusControllerIT {
 
     @Test
     void getBus() {
-        client.get().uri("/bus").exchange().expectStatus().isOk().expectBody(String.class).isEqualTo("Hello Bus!");
+        client.get().uri("/bus").exchange().expectStatus().isOk().expectBody(String.class).isEqualTo("Hello cloud config server!");
     }
 }

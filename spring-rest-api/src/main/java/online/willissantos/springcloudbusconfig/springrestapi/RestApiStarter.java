@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringCloudBusConfigApplication {
+public class RestApiStarter {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudBusConfigApplication.class, args);
+        SpringApplication.run(RestApiStarter.class, args);
     }
 
 }

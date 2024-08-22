@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: server
+    config:
+        import: "configserver:"
+    cloud:
+        config:
+            fail-fast: true
