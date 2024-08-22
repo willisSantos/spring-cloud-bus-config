@@ -1,9 +1,7 @@
 [versions]
 spring-boot = "3.3.2"
-graalvm-buildtools = "0.10.2"
 lombok = "1.18.34"
 
 [libraries]
 spring-boot-plugin = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot"}
-graalvm-buildtools = { module = "org.graalvm.buildtools:native-gradle-plugin", version.ref = "graalvm-buildtools"}
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok"}
