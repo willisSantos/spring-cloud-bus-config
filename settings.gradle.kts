@@ -1,2 +1,2 @@
 rootProject.name = "spring-cloud-bus-config"
-include("spring-rest-api", "spring-config-server", "spring-cloud-bus")
+include("spring-rest-api", "spring-config-server")
