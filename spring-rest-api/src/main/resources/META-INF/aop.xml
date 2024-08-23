@@ -1,0 +1,10 @@
+<aspectj>
+    <aspects>
+        <aspect name="online.willissantos.springcloudbusconfig.springrestapi.service.aspect.CustomAnnotationAspect"/>
+
+        <weaver>
+            <include within="online.willissantos.springcloudbusconfig.springrestapi.service.*"/>
+            <include within="online.willissantos.springcloudbusconfig.springrestapi.service.aspect.*"/>
+        </weaver>
+    </aspects>
+</aspectj>
