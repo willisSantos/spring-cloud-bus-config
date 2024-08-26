@@ -1,2 +1,14 @@
+
+configs:
+    rabbit_file:
+        file: containersConfig/rabbitmq.conf
+
 services:
-    web:
+    rabbit:
+        image: "rabbitmq:3.13.6-alpine"
+        configs:
+            - source: rabbit_file
+              target: /etc/rabbitmq/rabbitmq.conf
+        ports:
+            - "5673:5673"
+            - "15672:15672"

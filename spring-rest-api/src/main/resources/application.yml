@@ -3,6 +3,23 @@ spring:
         name: server
     config:
         import: "configserver:"
+    rabbitmq:
+        host: 127.0.0.1
+        port: 5673
+        username: user
+        password: password
     cloud:
-        config:
-            fail-fast: true
+        bus:
+            enabled: true
+            refresh:
+                enabled: true
+#        config:
+#            fail-fast: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    security:
+        enabled: false

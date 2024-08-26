@@ -4,10 +4,25 @@ server:
 spring:
     application:
         name: server
+    rabbitmq:
+        host: 127.0.0.1
+        port: 5673
+        username: user
+        password: password
     cloud:
+        bus:
+            enabled: true
         config:
             server:
                 git:
                     uri: https://github.com/willisSantos/git-lfs-test-github
                     skipSslValidation: true
                     defaultLabel: master
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    security:
+        enabled: false
