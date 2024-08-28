@@ -2,7 +2,7 @@ spring:
     application:
         name: server
     config:
-        import: "configserver:"
+        import: "optional:configserver:"
     rabbitmq:
         host: 127.0.0.1
         port: 5673
