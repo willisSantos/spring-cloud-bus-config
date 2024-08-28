@@ -1,9 +1,36 @@
-
 configs:
     rabbit_file:
         file: containersConfig/rabbitmq.conf
 
 services:
+    config-server:
+        depends_on:
+            -   rabbit
+        image: spring-cloud-bus-config/config-server:1.0.0
+        build:
+            context: .
+            dockerfile: spring-config-server/Dockerfile
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+        ports:
+            - "8888:8888"
+        healthcheck:
+            test: "wget --no-verbose --tries=1 --spider localhost:8888/actuator/health || exit 1"
+            interval: 10s
+            timeout: 10s
+            retries: 2
+    rest-api:
+        depends_on:
+            config-server:
+                  condition: service_healthy
+        image: spring-cloud-bus-config/rest-api:1.0.0
+        build:
+            context: .
+            dockerfile: spring-rest-api/Dockerfile
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+        ports:
+            - "8080:8080"
     rabbit:
         image: "rabbitmq:3.13.6-alpine"
         configs:

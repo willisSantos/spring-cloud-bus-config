@@ -1,0 +1,9 @@
+spring:
+    rabbitmq:
+        host: rabbit
+        port: 5673
+        username: user
+        password: password
+    config:
+        import: "configserver:http://config-server:8888"
+

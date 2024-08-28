@@ -1,0 +1,5 @@
+build
+../lib
+../.idea
+../.editorconfig
+../flake.nix

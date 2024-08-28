@@ -1,0 +1,6 @@
+spring:
+    rabbitmq:
+        host: rabbit
+        port: 5673
+        username: user
+        password: password
